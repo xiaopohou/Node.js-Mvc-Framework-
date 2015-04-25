@@ -1,3 +1,4 @@
 C:\Users\colin\Documents\Perso\NodeJsProject\WebApp1\TestNodeJsEnTypeScript\NodejsWebApp1\NodejsWebApp1\obj\Debug\NodejsWebApp1.njsprojResolveAssemblyReference.cache
 C:\Users\colin\Documents\Perso\NodeJsProject\WebApp1\TestNodeJsEnTypeScript\NodejsWebApp1\NodejsWebApp1\bin\Microsoft.NodejsTools.WebRole.dll
 C:\Users\colin\Documents\GitHub\Node.js-Mvc-Framework-\obj\Debug\NodejsWebApp1.njsprojResolveAssemblyReference.cache
+C:\Users\colin\Documents\GitHub\Node.js-Mvc-Framework-\bin\Microsoft.NodejsTools.WebRole.dll

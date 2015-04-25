@@ -6,6 +6,7 @@
 };
 var ControllerInterface = require("./ControllerInterface");
 var Class = require("../../Model/User");
+var Connexion = require("../../node_modules/libColbeaf/Connexion");
 
 var UserController = (function (_super) {
     __extends(UserController, _super);
@@ -14,7 +15,7 @@ var UserController = (function (_super) {
     }
     UserController.prototype.IndexAction = function (req, res) {
         this.User = new Class.User("MonNom", "MonPrénom");
-        req.Params.Id = 0;
+        this.User.Read(1, new Connexion.Connexion());
         this.View(req, res, this.User);
     };
 
