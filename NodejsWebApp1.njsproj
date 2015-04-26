@@ -48,12 +48,16 @@
     <TypeScriptCompile Include="AppStart.ts" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <TypeScriptCompile Include="Utils\libColbeaf\BaseObject.ts" />
+    <TypeScriptCompile Include="Utils\libColbeaf\Connexion.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Controllers\Controller\" />
     <Folder Include="Model\" />
+    <Folder Include="Utils\" />
     <Folder Include="Routing\" />
+    <Folder Include="Utils\libColbeaf\" />
     <Folder Include="Views\" />
     <Folder Include="Scripts\" />
     <Folder Include="Scripts\typings\" />

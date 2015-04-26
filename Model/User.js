@@ -4,7 +4,7 @@
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var LibColbeaf = require("../node_modules/libColbeaf/BaseObject");
+var LibColbeaf = require("../Utils/libColbeaf/BaseObject");
 
 var User = (function (_super) {
     __extends(User, _super);

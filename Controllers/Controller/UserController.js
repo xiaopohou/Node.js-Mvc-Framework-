@@ -6,7 +6,7 @@
 };
 var ControllerInterface = require("./ControllerInterface");
 var Class = require("../../Model/User");
-var Connexion = require("../../node_modules/libColbeaf/Connexion");
+var Connexion = require("../../Utils/libColbeaf/Connexion");
 
 var UserController = (function (_super) {
     __extends(UserController, _super);

@@ -1,7 +1,7 @@
 ﻿
 import ControllerInterface = require("./ControllerInterface");
 import Class = require("../../Model/User");
-import Connexion = require("../../node_modules/libColbeaf/Connexion");
+import Connexion = require("../../Utils/libColbeaf/Connexion");
 
 export class UserController extends ControllerInterface.MainInterface {
 

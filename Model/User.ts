@@ -1,4 +1,4 @@
-﻿import LibColbeaf = require("../node_modules/libColbeaf/BaseObject");
+﻿import LibColbeaf = require("../Utils/libColbeaf/BaseObject");
 
 export class User extends LibColbeaf.BaseObject<User> {
     Nom: string;
