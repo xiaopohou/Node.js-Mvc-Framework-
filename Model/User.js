@@ -8,12 +8,10 @@ var LibColbeaf = require("../Utils/libColbeaf/BaseObject");
 
 var User = (function (_super) {
     __extends(User, _super);
-    function User(N, P) {
+    function User() {
         _super.call(this);
-        this.N = N;
-        this.P = P;
-        this.Nom = N;
-        this.Prenom = P;
+        this.Nom = "";
+        this.Prenom = "";
     }
     return User;
 })(LibColbeaf.BaseObject);

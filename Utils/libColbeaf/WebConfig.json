@@ -1,0 +1,9 @@
+﻿{
+    "Orm": {
+        "Connector": "MySql",
+        "host": "localhost",
+        "database": "node.js",
+        "user": "root",
+        "password": ""
+    }
+}

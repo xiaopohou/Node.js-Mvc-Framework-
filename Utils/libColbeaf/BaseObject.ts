@@ -1,29 +1,41 @@
 import Connexion = require("./Connexion");
+import EventEmitter = require('events');
 
-export class BaseObject<T> {
+export class BaseObject<T> extends EventEmitter.EventEmitter {
+    constructor()
+    {
+        super();   
+    }
+    public Id: number;
+
     private  GetClassName(){
         return this["__proto__"].constructor.name;
     }
+    private Params =  {};
+    private Sql: string;
 
-
-
-    Read(id: any, connexion : Connexion.Connexion) {
-        connexion.Connexion.connect(function (err) {
-            if (err) {
-                console.error('error connecting: ' + err.stack);
-                return;
+    Read(id: any)  {
+        var conn = new Connexion.Connexion();
+        this.Sql = "SELECT * FROM "+this.GetClassName()+" WHERE Id = ? ;";
+        this.Params = [id];
+        var obj = this;
+        conn.on("ExecuteRequete", function (result) {
+            //PUISQUE READ result[0]
+            for (var key in result[0]) {
+                obj[key] = result[0][key];
             }
+            obj.emit("Read");
+        });
+        conn.ExecuteRequete(this.Sql, this.Params);
 
-            console.log('connected as id ' + connexion.Connexion.threadId);
+        this.on("Read", function () {
+            
         });
-        connexion.Connexion.query("SELECT * FROM "+ this.GetClassName()+ " WHERE Id = " + id + ";", function (err, rows, fields) {
-            if (err) {
-                return;
-            }
-            var a = "";
-        });
-        connexion.Connexion.end();
+
+        
     }
+
+
 
     SaveOrUpdate(obj: T) {
 

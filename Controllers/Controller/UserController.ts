@@ -2,6 +2,7 @@
 import ControllerInterface = require("./ControllerInterface");
 import Class = require("../../Model/User");
 import Connexion = require("../../Utils/libColbeaf/Connexion");
+import EventEmitter = require('events');
 
 export class UserController extends ControllerInterface.MainInterface {
 
@@ -11,9 +12,13 @@ export class UserController extends ControllerInterface.MainInterface {
         }
 
         IndexAction(req, res) {
-            this.User = new Class.User("MonNom", "MonPrénom");
-            this.User.Read(1, new Connexion.Connexion());
-            this.View(req,res,this.User);
+            this.User = new Class.User();
+            this.User.Read(1);
+            var obj = this;
+            this.User.on("Read", function () {
+                obj.View(req, res, obj.User);
+            });
+            
         }
 
         GetAction(req, res) {
